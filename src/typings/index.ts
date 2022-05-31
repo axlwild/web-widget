@@ -98,6 +98,10 @@ export interface IConfiguration {
      */
     placeholderText: string,
     /*
+    * Text for the send button
+    */
+    sendButtonText: string,
+    /*
      * Toggle display of message times
      */
     displayMessageTime: boolean,

@@ -88,6 +88,7 @@ html, body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    user-select: none;
 }
 
 /* I N P U T */
@@ -97,7 +98,7 @@ html, body {
     bottom: 0px;
     left: 0;
     right: 0;
-    width: 95%;
+    width: 70%;
     height: 55px;
     z-index: 99;
     background-color: #fff;
@@ -199,4 +200,20 @@ div.loading-dots .dot-lg {
     cursor: pointer;
     color: white;
     text-align: center;
+}
+.sendArea{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 55px;
+}
+.sendButton{
+    background-color: #408591;
+    color: white;
+    border-radius: 5px;
+    padding: 1px;
+    cursor: pointer;
+    text-align: center;
+    width: 20%;
+    height: 100%;
 }

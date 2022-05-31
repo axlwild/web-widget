@@ -9,6 +9,7 @@ export const defaultConfiguration: IConfiguration = {
     cookieValidInDays: 1,
     introMessage: '',
     placeholderText: 'Send a message...',
+    sendButtonText: 'Send',
     displayMessageTime: true,
     sendWidgetOpenedEvent: false,
     widgetOpenedEventData: '',

@@ -82,17 +82,23 @@ export default class Chat extends Component<IChatProps, IChatState> {
                 </div>
 
                 {this.state.replyType === ReplyType.Text ? (
-                    <input
-                        id="userText"
-                        class="textarea"
-                        type="text"
-                        placeholder={this.props.conf.placeholderText}
-                        ref={input => {
-                            this.input = input as HTMLInputElement;
-                        }}
-                        onKeyPress={this.handleKeyPress}
-                        autofocus
-                    />
+                    <div class="sendArea">
+                        <input
+                            id="userText"
+                            class="textarea"
+                            type="text"
+                            placeholder={this.props.conf.placeholderText}
+                            ref={input => {
+                                this.input = input as HTMLInputElement;
+                            }}
+                            onKeyPress={this.handleKeyPress}
+                            autofocus
+                        />
+                        <button class="sendButton"
+                            onClick={this.handleSendByButton}>
+                            {this.props.conf.sendButtonText}
+                        </button>
+                    </div>
                 ) : ''}
 
                 {this.state.replyType === ReplyType.TextArea ? (
@@ -109,15 +115,18 @@ export default class Chat extends Component<IChatProps, IChatState> {
                             </g>
                         </svg>
 
-                        <textarea
-                            id="userText"
-                            class="textarea"
-                            placeholder={this.props.conf.placeholderText}
-                            ref={input => {
-                                this.textarea = input as HTMLInputElement;
-                            }}
-                            autofocus
-                        />
+                        <div>
+                            <textarea
+                                id="userText"
+                                placeholder={this.props.conf.placeholderText}
+                                class="textarea"
+                                ref={input => {
+                                    this.textarea = input as HTMLInputElement;
+                                }}
+                                autofocus
+                            />
+                            <button>{this.props.conf.sendButtonText}</button>
+                        </div>
                     </div>
                 ) : ''}
 
@@ -147,6 +156,12 @@ export default class Chat extends Component<IChatProps, IChatState> {
             this.input.value = "";
         }
     };
+    // send message through send button
+    handleSendByButton = () => {
+        this.say(this.input.value);
+        this.input.value = "";
+    };
+
 
     handleSendClick = (e: MouseEvent) => {
         this.say(this.textarea.value);
