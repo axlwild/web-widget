@@ -102,9 +102,10 @@ export default class Widget extends Component<any, IWidgetState> {
                                     {conf.title}
                                 </div>
                                 <ArrowIcon isOpened={isChatOpen}/>
-                            </div> : <ChatTitleMsg onClick={this.toggle} conf={conf}/>)
+                            </div> : <div></div>)
                         :
-                        <ChatTitleMsg onClick={this.toggle} conf={conf}/>
+                        <div></div>
+
                 }
 
                 {/*Chat IFrame*/}
