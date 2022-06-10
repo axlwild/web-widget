@@ -83,7 +83,7 @@ export default class Widget extends Component<any, IWidgetState> {
 
         return (
 
-            <div style={wrapperStyle}>
+            <div style={wrapperStyle} class="widgetRoot">
 
                 {/* Open/close button */}
                 {(isMobile || conf.alwaysUseFloatingButton) && !isChatOpen ?

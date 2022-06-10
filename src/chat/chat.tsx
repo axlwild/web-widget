@@ -158,6 +158,10 @@ export default class Chat extends Component<IChatProps, IChatState> {
     };
     // send message through send button
     handleSendByButton = () => {
+        let text = this.input.value;
+        if (text.length == 0) {
+            return;
+        }
         this.say(this.input.value);
         this.input.value = "";
     };
